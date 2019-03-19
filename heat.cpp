@@ -92,21 +92,6 @@ int main()
 		betta[i][Ny-1] = Up1[i][Ny-1];		
 	}
 
-	
-
-	//ofstream check;
-	//check.open("lambda.txt");
-	//
-	//for (int i = 0; i < Nx; i++)
-	//{
-	//	for (int j = 0; j < Ny; j++)
-	//	{
-	//		check <<  Heat_Coeff[i][j] << "      ";
-	//	}
-	//	check << ";" << endl;
-	//}
-	//check.close();
-	
 
 	for(int time=0; time<Nt; time++) // time loop
 	{
