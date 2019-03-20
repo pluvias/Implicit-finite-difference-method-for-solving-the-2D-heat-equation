@@ -39,9 +39,7 @@ int main()
 	double **Up1 = new double*[Nx]; // U(n)
 	double **Heat_Coeff = new double*[Nx]; // thermal conductivity (lambda)
 
-	double A; // coeff-s of the tridiagonal matrix
-	double C;   
-	double B; 
+	double A, C, B; // coeff-s of the tridiagonal matrix 
 	double F; // F - right side (system of linear equations)
 
 	double **alpha = new double *[Nx]; // numerical method parameters for "grid function" computation
@@ -65,7 +63,6 @@ int main()
 			Up1[i][j]=300; // init. cond 
 			Heat_Coeff[i][j] = ((x[i] >= 0.25) && (x[i] <= 0.65) && (y[j] >= 0.1) && (y[j] <=0.25)) ? 10e-2 : 10e-4;
 			alpha[i][j] = 0.0;
-
 			//Up[i][j] = Up1[i][j]; // copy for the numerical method
 		}
 	}
@@ -117,7 +114,7 @@ int main()
 					
 				alpha[i][j] = -B / (C+A*alpha[i-1][j]);
 				betta[i][j] = (F - A*betta[i-1][j])/(C + A*alpha[i-1][j]);
-				//cout << "Received betta: " << betta[i][j] << endl << endl; //getch();
+				//cout << "Received beta: " << betta[i][j] << endl << endl; //getch();
 			}
 	
 			for(int i=Nx-1; i>1; i--)
