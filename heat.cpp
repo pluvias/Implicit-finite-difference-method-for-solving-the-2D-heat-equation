@@ -25,17 +25,17 @@ int main()
 	double *x = new double[Nx];  double *y = new double[Ny]; 
 	x[0] = 0.0;  y[0] = 0.0;  
 
-	for (int i = 0; (i < Nx) ; i++)
+	for (int i = 0; i < Nx; i++)
 	{
 		x[i + 1] = x[i] + hx;
 	}
-	for (int j=0; (j < Ny);j++)
+	for (int j=0; j < Ny; j++)
 	{
 		y[j + 1] = y[j] + hy;
 	}
 	
 
-	double **Up = new double*[Nx]; // storing values ​​from the previous step U(n+1/2)
+	double **Up = new double*[Nx]; // storing values from the previous step U(n+1/2)
 	double **Up1 = new double*[Nx]; // U(n)
 	double **Heat_Coeff = new double*[Nx]; // thermal conductivity (lambda)
 
